@@ -1,85 +1,44 @@
-#include "Stack.h" 
 #include <iostream>
-
-/*
-
-int main()
-{
-	Stack a;
-	a.pop();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-*/
-
-
+#include "Queue.h"
+#include "Stack.h"
 
 int main() {
-    // Create an instance of the Stack class
-    Stack myStack;
+    // Testing the Queue class
+    Queue queue;
 
-    // Push some elements onto the stack
-    myStack.push(10);
-    myStack.push(20);
-    myStack.push(30);
+    std::cout << "Testing the Queue class:" << std::endl;
 
-    // Get the top element
-    double topElement = myStack.top();
-    std::cout << "Top element: " << topElement << std::endl;
+    // Pushing elements into the queue
+    queue.push(1.0);
+    queue.push(2.0);
+    queue.push(3.0);
 
-    // Check if the stack is empty
-    if (myStack.empty()) {
-        std::cout << "Stack is empty." << std::endl;
-    }
-    else {
-        std::cout << "Stack is not empty." << std::endl;
-    }
+    std::cout << "Queue size: " << queue.size() << std::endl;
+    std::cout << "Front element: " << queue.front() << std::endl;
+    std::cout << "Back element: " << queue.back() << std::endl;
 
-    // Pop elements from the stack
-    myStack.pop(); // Removes 30
-    myStack.pop(); // Removes 20
+    // Popping elements from the queue
+    queue.pop();
+    std::cout << "Popped one element. New front element: " << queue.front() << std::endl;
+    std::cout << "Queue size: " << queue.size() << std::endl;
 
-    // Get the new top element
-    topElement = myStack.top();
-    std::cout << "Top element: " << topElement << std::endl;
+    // Testing the Stack class
+    Stack stack;
 
-    // Check the size of the stack
-    int stackSize = myStack.size();
-    std::cout << "Stack size: " << stackSize << std::endl;
+    std::cout << "\nTesting the Stack class:" << std::endl;
 
-    // Swap the contents of two stacks
-    Stack anotherStack;
-    anotherStack.push(5);
-    anotherStack.push(15);
+    // Pushing elements onto the stack
+    stack.push(10.0);
+    stack.push(20.0);
+    stack.push(30.0);
 
-    myStack.swap(anotherStack);
+    std::cout << "Stack size: " << stack.size() << std::endl;
+    std::cout << "Top element: " << stack.top() << std::endl;
 
-    std::cout << "Contents of myStack after swapping:" << std::endl;
-    while (!myStack.empty()) {
-        std::cout << myStack.top() << " ";
-        myStack.pop();
-    }
-
-    std::cout << "\nContents of anotherStack after swapping:" << std::endl;
-    while (!anotherStack.empty()) {
-        std::cout << anotherStack.top() << " ";
-        anotherStack.pop();
-    }
+    // Popping elements from the stack
+    stack.pop();
+    std::cout << "Popped one element. New top element: " << stack.top() << std::endl;
+    std::cout << "Stack size: " << stack.size() << std::endl;
 
     return 0;
 }
